@@ -1,1 +1,35 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "resepkitatheme";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /* Token bawaan DaisyUI */
+  --color-primary: #e9efd9;
+  --color-primary-content: #1c1917;
+  --color-secondary: #55752b;
+  --color-secondary-content: #ffffff;
+  --color-base-100: #fafaf7;
+  --color-base-content: #44403c;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+@theme {
+  /* Token kustom untuk utility class Tailwind (bg-*, text-*, border-*) */
+  --color-primary-hover: #405c1f;
+  --color-background: #fafaf7;
+  --color-surface: #ffffff;
+  --color-heading: #1c1917;
+  --color-body: #44403c;
+  --color-muted: #78716c;
+  --color-border: #e7e5e4;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-body font-sans antialiased;
+  }
+}
